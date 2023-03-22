@@ -2,21 +2,8 @@
 
 ## Introduction
 
-This Web Application powered by Machine Learning and Flask focusses on bringing every aspect of Iris Flower classification together. <b>Iris Flower Classification project</b> is one of the most basic projects in ML used to get a better understanding of data and how ML models work. This project tries to bring the data description, EDA, ML models performance and finally prediction model all under one roof.</b>
+This Web Application powered by Machine Learning and Flask focusses on bringing every aspect of Iris Flower classification together. <b>Iris Flower Classification project</b> is one of the most basic projects in ML used to get a better understanding of data and how ML models work. This project tries to bring the data description, EDA, ML models performance and finally prediction model together.</b>
 
-## Technology Used
-
-<ul>
-  <li>HTML</li>
-  <li>CSS</li>
-  <li>JS</li>
-  <li>Flask</li>
-  <li>Pandas</li>
-  <li>Sklearn</li>
-</ul>
-
-## Visualizations
-All the visualizations used in this project can be found in this <a href="https://www.kaggle.com/pratik1120/iris-visualization-and-model-performances">Kaggle Kernel</a>
 
 ## Installation
 
