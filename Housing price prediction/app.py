@@ -11,14 +11,14 @@ from xgboost import XGBRegressor
 from sklearn.ensemble import RandomForestRegressor
 from lightgbm import LGBMRegressor
 
-app = Flask(__name__, static_url_path='/static')
+app = Flask(__name__, data_url_path='/data')
 CORS(app)
 
 @app.route('/prediction', methods=['POST'])
 def hello_world():
     try:
         models = request.json
-        data = pd.read_csv(os.path.join(app.static_folder, "processed_train_data.csv"))
+        data = pd.read_csv(os.path.join(app.data_folder, "processed_train_data.csv"))
         X = data.drop('SalePrice', axis=1)
         y = data['SalePrice']
 
@@ -32,17 +32,17 @@ def hello_world():
             preds = np.array([0] * 291)
 
             if models["rf"] > 0:
-                rf = pickle.load(open(os.path.join(app.static_folder, "rf.sav"), 'rb'))
+                rf = pickle.load(open(os.path.join(app.data_folder, "rf.sav"), 'rb'))
                 #rf.fit(X_train_scaled, y_train)
                 preds = np.add(preds, np.array(list(rf.predict(X_val_scaled) * models["rf"])))
 
             if models["xgb"] > 0:
-                xgb = pickle.load(open(os.path.join(app.static_folder, "xgb.sav"), 'rb'))
+                xgb = pickle.load(open(os.path.join(app.data_folder, "xgb.sav"), 'rb'))
                 #xgb.fit(X_train_scaled, y_train)
                 preds = np.add(preds, np.array(list(xgb.predict(X_val_scaled) * models["xgb"])))
                 
             if models["lgbm"] > 0:
-                lgbm = pickle.load(open(os.path.join(app.static_folder, "lgbm.sav"), 'rb'))
+                lgbm = pickle.load(open(os.path.join(app.data_folder, "lgbm.sav"), 'rb'))
                 #lgbm.fit(X_train_scaled, y_train)
                 preds = np.add(preds, np.array(list(lgbm.predict(X_val_scaled) * models["lgbm"])))
 
@@ -52,17 +52,17 @@ def hello_world():
 
         else:
             if models["rf"] == 1.0:
-                rf = pickle.load(open(os.path.join(app.static_folder, "rf.sav"), 'rb'))
+                rf = pickle.load(open(os.path.join(app.data_folder, "rf.sav"), 'rb'))
                 #rf.fit(X_train_scaled, y_train)
                 preds = rf.predict(X_val_scaled)
 
             if models["xgb"] == 1.0:
-                xgb = pickle.load(open(os.path.join(app.static_folder, "xgb.sav"), 'rb'))
+                xgb = pickle.load(open(os.path.join(app.data_folder, "xgb.sav"), 'rb'))
                 #xgb.fit(X_train_scaled, y_train)
                 preds = xgb.predict(X_val_scaled)
                 
             if models["lgbm"] == 1.0:
-                lgbm = pickle.load(open(os.path.join(app.static_folder, "lgbm.sav"), 'rb'))
+                lgbm = pickle.load(open(os.path.join(app.data_folder, "lgbm.sav"), 'rb'))
                 #lgbm.fit(X_train_scaled, y_train)
                 preds = lgbm.predict(X_val_scaled)
 
@@ -79,7 +79,7 @@ def hello_world():
 def hello_world1():
     try:
         models = request.json
-        data = pd.read_csv(os.path.join(app.static_folder, "processed_train_data.csv"))
+        data = pd.read_csv(os.path.join(app.data_folder, "processed_train_data.csv"))
         X = data.drop('SalePrice', axis=1)
         y = data['SalePrice']
 
