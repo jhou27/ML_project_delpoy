@@ -22,20 +22,12 @@ All the visualizations used in this project can be found in this <a href="https:
 
 ## Installation
 
-1. Drop a ⭐ on the Github Repository.
-2. Download the repo as a zip file or clone it using the following command
-```sh
-https://github.com/pratik-276/End-to-End-Machine-Learning-Projects.git
-```
-
-3. Move inside the ` /IRIS Flower Classification Project ` folder and open CLI in that folder
-
-4. Install the required libraries by the following command
+Install the required libraries by the following command
 ```sh
 pip install -r requirements.txt
 ```
 
-5. Run the following commands in the command line to get your flask app started
+Run the following commands in the command line to get your flask app started
 ```sh
 set FLASK_APP=main.py
 flask run
@@ -53,6 +45,3 @@ flask run
 4. Prediction Model
 <img src="https://github.com/pratik-276/End-to-End-Machine-Learning-Projects/blob/master/IRIS%20Flower%20Classification%20Project/static/readmemodel.PNG">
 
-## Conclusion
-
-This is a try to present a much explored dataset in a new way. Do drop a ⭐ if you like it. More such projects are coming soon which will involve more steps related to data cleaning, analysis, data wrngling and more.
