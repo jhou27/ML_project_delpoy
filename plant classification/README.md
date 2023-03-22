@@ -1,7 +1,5 @@
 ## IRIS FLOWER CLASSIFICATION
 
-<p align="center"><img src="https://github.com/pratik-276/End-to-End-Machine-Learning-Projects/blob/master/IRIS%20Flower%20Classification%20Project/static/Iris-virginica.PNG" height="200" width="200"></p>
-
 ## Introduction
 
 This Web Application powered by Machine Learning and Flask focusses on bringing every aspect of Iris Flower classification together. <b>Iris Flower Classification project</b> is one of the most basic projects in ML used to get a better understanding of data and how ML models work. This project tries to bring the data description, EDA, ML models performance and finally prediction model all under one roof.</b>
